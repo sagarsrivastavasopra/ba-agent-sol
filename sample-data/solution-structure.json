@@ -1,0 +1,48 @@
+{
+  "solution_name": "SampleCRM_Core",
+  "entities": [
+    {
+      "name": "Contact",
+      "custom_fields": ["ss_loyaltytier"],
+      "forms": ["Main Contact Form"],
+      "views": ["Active Contacts"]
+    },
+    {
+      "name": "Opportunity",
+      "custom_fields": ["ss_dealsource"],
+      "forms": ["Main Opportunity Form"],
+      "flows_referencing": ["Opportunity Auto-Notify Flow"]
+    },
+    {
+      "name": "Lead",
+      "custom_fields": [],
+      "forms": ["Main Lead Form"],
+      "flows_referencing": ["Lead Scoring Flow"]
+    }
+  ],
+  "cloud_flows": [
+    {
+      "name": "Opportunity Auto-Notify Flow",
+      "trigger": "Opportunity status change",
+      "touches_entities": ["Opportunity"]
+    },
+    {
+      "name": "Lead Scoring Flow",
+      "trigger": "Lead created or updated",
+      "touches_entities": ["Lead"]
+    }
+  ],
+  "plugins": [
+    {
+      "name": "ss_ContactValidationPlugin",
+      "entity": "Contact",
+      "step": "PreValidation on Create",
+      "description_present": false
+    }
+  ],
+  "known_issues_for_demo": [
+    "ss_ContactValidationPlugin has no step description (Solution Guardian style check)",
+    "Lead entity has no approval-related fields or flows yet (relevant to REQ-002)",
+    "No archival/retention flow exists yet (relevant to REQ-003 compliance risk)"
+  ]
+}

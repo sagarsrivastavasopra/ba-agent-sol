@@ -1,0 +1,27 @@
+{
+  "base_estimates_hours": {
+    "new_field_simple_choice": 8,
+    "new_field_calculated": 12,
+    "cloud_flow_new_simple": 16,
+    "cloud_flow_modification": 8,
+    "cloud_flow_approval_step": 24,
+    "new_dataverse_table": 16,
+    "plugin_new_simple": 16,
+    "plugin_new_external_api": 32,
+    "security_role_change": 4,
+    "form_layout_change": 4,
+    "view_change": 2,
+    "data_archival_or_deletion_process": 24
+  },
+  "risk_multipliers": {
+    "low": 1.0,
+    "medium": 1.25,
+    "high": 1.5,
+    "critical": 2.0
+  },
+  "confidence_rules": {
+    "high_confidence": "Component type matches a known pattern exactly",
+    "medium_confidence": "Component type is similar to a known pattern with modifications",
+    "low_confidence": "Component type is novel or involves compliance/data-retention concerns — recommend a spike before committing an estimate"
+  }
+}
